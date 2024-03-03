@@ -1,0 +1,280 @@
+:root {
+    --headerFontWeight: 700;
+    --linkColor: #5e6cda;
+    --linkVisitedColor: #bf3333;
+    --linkActiveColor: #59bc2b;
+    --outlineColor: #000;
+    --buttonBackgroundColor: dodgerblue;
+    --buttonTextColor: white;
+    --buttonBorderColor: rgba(0, 0, 0, 0.3);
+    --homeButtonColor: darkslateblue;
+    --homeButtonActiveColor: lightblue;
+    --homeButtonFocusColor: red;
+    --secondaryButtonBackgroundColor: #e0b354;
+    --secondaryButtonTextColor: #2b2b2b;
+    --gridItemBackgroundColor: lightgray;
+    --sunColorZero: #edc655;
+    --sunColorFifty: #fcffad;
+    --sunColorHundred: var(#f76414);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: var(--headerFontWeight);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: var(--headerFontWeight);
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: var(--headerFontWeight);
+}
+
+a {
+    color: var(--linkColor);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--linkVisitedColor);
+}
+
+a:active {
+    color: var(linkActiveColor);
+}
+
+a:focus {
+    outline: 2px solid var(outlineColor);
+}
+
+button,
+.button {
+    border: none;
+    display: inline-block;
+    font-family: inherit;
+    background-color: var(buttonBackgroundColor);
+    color: var(buttonTextColor);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border-bottom: 2px solid var(buttonBorderColor);
+    transition: opacity 0.2s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+button:hover {
+    background-color: var(homeButtonColor);
+}
+
+button:active {
+    background-color: var(homeButtonActiveColor);
+}
+
+button:focus {
+    border: 2px solid var(homeButtonFocusColor);
+}
+
+button:hover,
+button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.button__secondary {
+    background-color: var(secondaryButtonBackgroundColor);
+    color: var(secondaryButtonTextColor);
+}
+
+.navigation-list__item--active {
+    text-decoration: none;
+}
+
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.profile__portrait {
+    float: left;
+    width: 250px;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.page-header__item {
+    flex: 0 1 200px;
+}
+
+.page-header__logo {
+    width: 15%;
+    height: 15%;
+}
+
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid__item {
+    background-color: var(gridItemBackgroundColor);
+}
+
+.grid__item:hover {
+    transform: scale(1.05);
+}
+
+.grid__item:hover .overlay {
+    opacity: 1;
+}
+
+@keyframes color-change {
+    0% {
+        fill: var(sunColorZero);
+    }
+
+    50% {
+        fill: var(sunColorFifty);
+    }
+
+    100% {
+        fill: var(sunColorHundred);
+    }
+}
+
+.sun {
+    animation: 4s color-change inifinite alternate linear;
+}
+
+@keyframes cloud-move {
+    from {
+        transform: translate(0, 50px);
+    }
+
+    to {
+        transform: translate(200px, 50px);
+    }
+}
+
+.cloud-front {
+    animation: 30s cloud-move inifinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+    from {
+        transform: translate(446px, 48px);
+    }
+
+    to {
+        transform: translate(100px, 48px);
+    }
+}
+
+.cloud-back {
+    animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+/* This is the beginning of the scss section, for copy-paste purposes */
+
+a {
+    color: #357b70;
+}
+
+.bg-darker {
+    background-color: #16342f;
+}
+
+.bg-lighter {
+    background-color: #449f90;
+}
+
+/* This is the end of the scss section, for copy-paste purposes */
+
+:root {
+    --primary-color: #357b70;
+    --secondary-color: #e0b354;
+    --dark-grey: #2b2b2b;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
