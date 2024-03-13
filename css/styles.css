@@ -60,6 +60,10 @@ a:focus {
     outline: 2px solid var(--outlineColor);
 }
 
+.page-padding {
+    padding: 1em;
+}
+
 button,
 .button {
     border: none;
