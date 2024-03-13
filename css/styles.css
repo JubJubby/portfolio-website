@@ -53,11 +53,11 @@ a:visited {
 }
 
 a:active {
-    color: var(linkActiveColor);
+    color: var(--linkActiveColor);
 }
 
 a:focus {
-    outline: 2px solid var(outlineColor);
+    outline: 2px solid var(--outlineColor);
 }
 
 button,
@@ -65,13 +65,13 @@ button,
     border: none;
     display: inline-block;
     font-family: inherit;
-    background-color: var(buttonBackgroundColor);
-    color: var(buttonTextColor);
+    background-color: var(--buttonBackgroundColor);
+    color: var(--buttonTextColor);
     text-decoration: none;
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 3px;
-    border-bottom: 2px solid var(buttonBorderColor);
+    border-bottom: 2px solid var(--buttonBorderColor);
     transition: opacity 0.2s;
 }
 
@@ -84,15 +84,15 @@ button:focus,
 }
 
 button:hover {
-    background-color: var(homeButtonColor);
+    background-color: var(--homeButtonColor);
 }
 
 button:active {
-    background-color: var(homeButtonActiveColor);
+    background-color: var(--homeButtonActiveColor);
 }
 
 button:focus {
-    border: 2px solid var(homeButtonFocusColor);
+    border: 2px solid var(--homeButtonFocusColor);
 }
 
 button:hover,
@@ -102,8 +102,8 @@ button:focus {
 }
 
 .button__secondary {
-    background-color: var(secondaryButtonBackgroundColor);
-    color: var(secondaryButtonTextColor);
+    background-color: var(--secondaryButtonBackgroundColor);
+    color: var(--secondaryButtonTextColor);
 }
 
 .navigation-list__item--active {
@@ -169,7 +169,7 @@ button:focus {
 }
 
 .grid__item {
-    background-color: var(gridItemBackgroundColor);
+    background-color: var(--gridItemBackgroundColor);
 }
 
 .grid__item:hover {
@@ -182,15 +182,15 @@ button:focus {
 
 @keyframes color-change {
     0% {
-        fill: var(sunColorZero);
+        fill: var(--sunColorZero);
     }
 
     50% {
-        fill: var(sunColorFifty);
+        fill: var(--sunColorFifty);
     }
 
     100% {
-        fill: var(sunColorHundred);
+        fill: var(--sunColorHundred);
     }
 }
 
@@ -226,7 +226,11 @@ button:focus {
     animation: 34s cloud-move-reverse infinite alternate linear;
 }
 
-/* This is the beginning of the scss section, for copy-paste purposes */
+:root {
+    --primary-color: #357b70;
+    --secondary-color: #e0b354;
+    --dark-grey: #2b2b2b;
+}
 
 a {
     color: #357b70;
@@ -240,26 +244,16 @@ a {
     background-color: #449f90;
 }
 
-/* This is the end of the scss section, for copy-paste purposes */
-
-:root {
-    --primary-color: #357b70;
-    --secondary-color: #e0b354;
-    --dark-grey: #2b2b2b;
-}
-
-a {
-    color: var(--primary-color);
-}
-
 @media all and (max-width: 500px) {
     .grid {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
     .grid {
+        -ms-grid-columns: 1fr 20px 1fr;
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -278,3 +272,4 @@ a {
         font-size: 22px;
     }
 }
+

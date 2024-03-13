@@ -5,6 +5,26 @@
 * Browsers: last 2 version
 */
 
+:root {
+    --headerFontWeight: 700;
+    --linkColor: #5e6cda;
+    --linkVisitedColor: #bf3333;
+    --linkActiveColor: #59bc2b;
+    --outlineColor: #000;
+    --buttonBackgroundColor: dodgerblue;
+    --buttonTextColor: white;
+    --buttonBorderColor: rgba(0, 0, 0, 0.3);
+    --homeButtonColor: darkslateblue;
+    --homeButtonActiveColor: lightblue;
+    --homeButtonFocusColor: red;
+    --secondaryButtonBackgroundColor: #e0b354;
+    --secondaryButtonTextColor: #2b2b2b;
+    --gridItemBackgroundColor: lightgray;
+    --sunColorZero: #edc655;
+    --sunColorFifty: #fcffad;
+    --sunColorHundred: var(#f76414);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -14,21 +34,21 @@ body {
 
 h1 {
     font-size: 30px;
-    font-weight: 700;
+    font-weight: var(--headerFontWeight);
 }
 
 h2 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: var(--headerFontWeight);
 }
 
 h3 {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: var(--headerFontWeight);
 }
 
 a {
-    color: #5e6cda;
+    color: var(--linkColor);
 }
 
 a:hover {
@@ -36,15 +56,15 @@ a:hover {
 }
 
 a:visited {
-    color: #bf3333;
+    color: var(--linkVisitedColor);
 }
 
 a:active {
-    color: var(linkActiveColor);
+    color: var(--linkActiveColor);
 }
 
 a:focus {
-    outline: 2px solid var(outlineColor);
+    outline: 2px solid var(--outlineColor);
 }
 
 button,
@@ -52,13 +72,13 @@ button,
     border: none;
     display: inline-block;
     font-family: inherit;
-    background-color: var(buttonBackgroundColor);
-    color: var(buttonTextColor);
+    background-color: var(--buttonBackgroundColor);
+    color: var(--buttonTextColor);
     text-decoration: none;
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 3px;
-    border-bottom: 2px solid var(buttonBorderColor);
+    border-bottom: 2px solid var(--buttonBorderColor);
     -webkit-transition: opacity 0.2s;
     transition: opacity 0.2s;
 }
@@ -72,15 +92,15 @@ button:focus,
 }
 
 button:hover {
-    background-color: var(homeButtonColor);
+    background-color: var(--homeButtonColor);
 }
 
 button:active {
-    background-color: var(homeButtonActiveColor);
+    background-color: var(--homeButtonActiveColor);
 }
 
 button:focus {
-    border: 2px solid var(homeButtonFocusColor);
+    border: 2px solid var(--homeButtonFocusColor);
 }
 
 button:hover,
@@ -90,8 +110,8 @@ button:focus {
 }
 
 .button__secondary {
-    background-color: var(secondaryButtonBackgroundColor);
-    color: var(secondaryButtonTextColor);
+    background-color: var(--secondaryButtonBackgroundColor);
+    color: var(--secondaryButtonTextColor);
 }
 
 .navigation-list__item--active {
@@ -171,7 +191,7 @@ button:focus {
 }
 
 .grid__item {
-    background-color: var(gridItemBackgroundColor);
+    background-color: var(--gridItemBackgroundColor);
 }
 
 .grid__item:hover {
@@ -185,29 +205,29 @@ button:focus {
 
 @-webkit-keyframes color-change {
     0% {
-        fill: var(sunColorZero);
+        fill: var(--sunColorZero);
     }
 
     50% {
-        fill: var(sunColorFifty);
+        fill: var(--sunColorFifty);
     }
 
     100% {
-        fill: var(sunColorHundred);
+        fill: var(--sunColorHundred);
     }
 }
 
 @keyframes color-change {
     0% {
-        fill: var(sunColorZero);
+        fill: var(--sunColorZero);
     }
 
     50% {
-        fill: var(sunColorFifty);
+        fill: var(--sunColorFifty);
     }
 
     100% {
-        fill: var(sunColorHundred);
+        fill: var(--sunColorHundred);
     }
 }
 
@@ -274,7 +294,11 @@ button:focus {
     animation: 34s cloud-move-reverse infinite alternate linear;
 }
 
-/* This is the beginning of the scss section, for copy-paste purposes */
+:root {
+    --primary-color: #357b70;
+    --secondary-color: #e0b354;
+    --dark-grey: #2b2b2b;
+}
 
 a {
     color: #357b70;
@@ -286,12 +310,6 @@ a {
 
 .bg-lighter {
     background-color: #449f90;
-}
-
-/* This is the end of the scss section, for copy-paste purposes */
-
-a {
-    color: #357b70;
 }
 
 @media all and (max-width: 500px) {
